@@ -1,0 +1,11 @@
+namespaces:
+- author:
+  - Roland Ferger
+  contact:
+  - roland.ferger@einsteinmed.edu
+  doc: Auditory stimuli
+  name: ndx-auditory
+  schema:
+  - namespace: core
+  - source: ndx-auditory.extensions.yaml
+  version: 0.1.0
