@@ -14,12 +14,12 @@ readme = "README.md"
 license = {text = "BSD-3"}
 classifiers = [
     # TODO: add classifiers before release
-    # "Programming Language :: Python",
+    "Programming Language :: Python",
     # "Programming Language :: Python :: 3.8",
     # "Programming Language :: Python :: 3.9",
     # "Programming Language :: Python :: 3.10",
     # "Programming Language :: Python :: 3.11",
-    # "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.12",
     # "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
@@ -37,12 +37,12 @@ dependencies = [
 ]
 
 # TODO: add URLs before release
-# [project.urls]
-# "Homepage" = "https://github.com/organization/package"
+[project.urls]
+"Homepage" = "https://github.com/penalab/ndx-auditory"
 # "Documentation" = "https://package.readthedocs.io/"
-# "Bug Tracker" = "https://github.com/organization/package/issues"
-# "Discussions" = "https://github.com/organization/package/discussions"
-# "Changelog" = "https://github.com/organization/package/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/penalab/ndx-auditory/issues"
+"Discussions" = "https://github.com/penalab/ndx-auditory/discussions"
+"Changelog" = "https://github.com/penalab/ndx-auditory/blob/main/CHANGELOG.md"
 
 # Include only the source code under `src/pynwb/ndx_auditory` and the spec files under `spec`
 # in the wheel.
