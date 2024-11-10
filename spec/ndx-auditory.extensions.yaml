@@ -1,8 +1,50 @@
 groups:
-- neurodata_type_def: TetrodeSeries
-  neurodata_type_inc: ElectricalSeries
-  doc: An extension of ElectricalSeries to include the tetrode ID for each time series.
-  attributes:
-  - name: trode_id
-    dtype: int32
-    doc: The tetrode ID.
+- name: auditory_stimulation
+  doc: Metadata related to auditory stimuli.
+  quantity: '?'
+  groups:
+  - name: auditory_tracks
+    neurodata_type_inc: DynamicTable
+    doc: A table of all tracks for auditory stimuli available for this experiments.
+    quantity: '?'
+    datasets:
+    - name: device
+      dtype:
+        target_type: AuditoryDevice
+        reftype: object
+      doc: Reference to the AuditoryDevice this track was connected to.
+    - name: presentation
+      dtype: text
+      doc: Presentation type like 'free field', 'dichotic', 'virtual'.
+- neurodata_type_def: AuditoryDevice
+  neurodata_type_inc: Device
+  doc: Metadata about an device used to present auditory stimuli
+- neurodata_type_def: AuditoryStimulusSeries
+  neurodata_type_inc: TimeSeries
+  doc: A TimeSeries for Auditory Stimuli
+  datasets:
+  - name: data
+    dtype: numeric
+    dims:
+    - - time
+      - track
+    - - time
+      - tracks
+    shape:
+    - - null
+      - 1
+    - - null
+      - null
+    doc: waveforms of auditory stimuli
+    attributes:
+    - name: unit
+      dtype: text
+      value: n.a.
+      doc: SI unit of data
+  - name: tracks
+    neurodata_type_inc: DynamicTableRegion
+    doc: DynamicTableRegion pointer to the auditory_tracks that are saved in this
+      time series.
+  - name: stimuli
+    neurodata_type_inc: DynamicTable
+    doc: DynamicTable identifying all stimuli that are saved in this time series.
